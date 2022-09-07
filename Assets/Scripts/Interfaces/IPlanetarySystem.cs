@@ -2,6 +2,6 @@ using System.Collections.Generic;
 
 public interface IPlanetarySystem
 {
-    public List<IPlanetaryObject> PlanetaryObjects { get; set; }
-    public void Update(float deltaTime);
+    public IEnumerable<IPlanetaryObject> PlanetaryObjects { get; set; }
+    public void VelocityUpdate(float deltaTime);
 }
