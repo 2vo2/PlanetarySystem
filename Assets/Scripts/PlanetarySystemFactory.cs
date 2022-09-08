@@ -1,8 +1,9 @@
+using System;
 using UnityEngine;
 
 public class PlanetarySystemFactory : MonoBehaviour, IPlanetarySystemFactory
 {
-    private PlanetarySystem _planetarySystem;
+    [SerializeField] private PlanetarySystem _planetarySystem;
     
     private void Start()
     {
@@ -12,7 +13,7 @@ public class PlanetarySystemFactory : MonoBehaviour, IPlanetarySystemFactory
 
     public IPlanetarySystem Create(double mass)
     {
-        _planetarySystem = new PlanetarySystem();
+        _planetarySystem = Instantiate(_planetarySystem);
         
         return _planetarySystem;
     }
